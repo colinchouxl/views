@@ -69,103 +69,114 @@
    </script>
 </head>
 <body style="-webkit-overflow-scrolling:touch" class="<?php if($this->in_social_page): ?>in_social_page<?php endif; ?> <?php if($this->logged_in): ?>logged-in<?php else: ?>visitor<?php endif; ?> <?php if(isset($this->is_author) && $this->is_author): ?>author<?php endif; ?>">
-    <div id="wrapper">
-    <div id="main-con">
-      <?php if(isset($this->post)): ?>
-      <div id="header">
-        <div class="share-title">
-          <div class="title-con">
-            <h1><span class="images-num"></span>张最棒的图片分享</h1>
-            <?php if($this->logged_in && isset($this->is_author)): ?><input type="text" name="title" size="16" value="16张最棒的图片分享"><?php endif; ?>
-            <div class="logo"></div>
-          </div>     
-        </div>
+    <?php if(isset($this->post)): ?>
+        <div id="header">
+            <div class="share-title">
+              <div class="title-con">
+                    <h1><span class="images-num"></span>张最棒的图片分享</h1>
+                    <?php if($this->logged_in && isset($this->is_author)): ?><input type="text" name="title" size="16" value="16张最棒的图片分享"><?php endif; ?>
+                    <div class="logo"></div>
+                    <!-- <div class="logo"></div> -->
+              </div>     
+            </div>
+         </div>
+     <div id="wrapper">
 
-        <div class="state">
-          <div class="shere-time"><span class="date"><?php echo $this->post->created; ?></span><a href="#"> Create by okMEMO  |</a></div>
-          <div class="read-times"><span><?php echo $this->post->read_times; ?></span> <span>阅读人次</span></div>
-          <div class="link"><a href="#"><?php echo SITE_URL; ?> </a></div>
-          <div class="editor"><span>编辑:</span><a href="#"><?php echo $this->author->nickname; ?></a></div>
-        </div>
+        <div id="main-con">
+            <div class="state">
+                <div class="shere-time"><a href="#"><?php echo $this->post->created; ?> OKMEMO  |</a><span class="editor">分享者:</span><a href="#"><?php echo $this->author->nickname; ?></a></div>
+                <div class="read-times"><span><?php echo $this->post->read_times; ?></span><span>阅读人次</span></div>
+                <div class="share-op">
+                  <span>分享</span>
+                  <a href="#" title="新浪微博" ><span class="ok-icon-sinaweibo-line icon-font"></span></a>
+                  <a href="#" title="微信" ><span class="ok-icon-wechat-line icon-font"></span></a>
+                  <a href="#" title="QQ空间" ><span class="ok-icon-qqzone-line icon-font"></span></a>
+                  <a href="#" title="人人网" ><span class="ok-icon-twitter-line icon-font"></span></a>
+                  <a href="#" title="腾讯微博" ><span class="ok-icon-tencentweibo-line icon-font"></span></a>
+                  <a href="#" title="豆瓣网" ><span class="ok-icon-douban-line icon-font"></span></a>
+                </div>
+            </div>
+           
+            
+            <div class="description">
+              <div class="title"><span>描述:</span></div>
+              <div></div>
+              <div class="show-des">
+                <pre><?php if(isset($this->post->description) && $this->post->description != null): ?><?php echo $this->post->description; ?><?php else: ?>人世间最美好的事莫过美图分享，今天选出<span class="images-num"></span>张最棒的图片集结成页，供大家分享，使美人美景更多人欣赏，您可在此段描述分享心得和编辑语。亦可多左侧便签中挑出内容放置与此<?php endif; ?></pre>
+                <?php if($this->logged_in && isset($this->is_author)): ?><textarea name="share-info" class="expand20-1000"></textarea><?php endif; ?>
+              </div>
+            </div>
+         
 
-       
-        
-        <div class="description">
-          <div class="title"><span>描述:</span></div>
-          <div></div>
-          <div class="show-des">
-            <pre><?php if(isset($this->post->description) && $this->post->description != null): ?><?php echo $this->post->description; ?><?php else: ?>人世间最美好的事莫过美图分享，今天选出<span class="images-num"></span>张最棒的图片集结成页，供大家分享，使美人美景更多人欣赏，您可在此段描述分享心得和编辑语。亦可多左侧便签中挑出内容放置与此<?php endif; ?></pre>
-            <?php if($this->logged_in && isset($this->is_author)): ?><textarea name="share-info" class="expand20-1000"></textarea><?php endif; ?>
+
+          <div id="share_iframe" style="-webkit-overflow-scrolling:touch">
+              <!-- 图片区域 -->
+              <iframe src="" id="images_pad" style="overflow:hidden"></iframe>
           </div>
-        </div>
-      </div>
 
-
-      <div id="share_iframe" style="-webkit-overflow-scrolling:touch">
-          <!-- 图片区域 -->
-          <iframe src="" id="images_pad" style="overflow:hidden"></iframe>
-      </div>
-
-    <div id="bshare_component"><!--其他分享组件-->
-        <h2>分享此图片墙</h2>
-        <div class="Share-module">
-            <div class="share-custom" style="text-align:center;">
-                <a title="分享到新浪微博" class="share-sinaminiblog"><span class="ok-icon-sinaweibo-line icon-font"></span></a>
-                <a title="分享到微信" class="share-weixin"><span class="ok-icon-wechat-line icon-font"></span></a>
-                <a title="分享到QQ空间" class="share-qzone"><span class="ok-icon-qqzone-line icon-font"></span></a>  
-                <a title="分享到豆瓣网" class="share-douban"><span class="ok-icon-douban-line icon-font"></span></a>
-                <a title="分享到腾讯微博" class="share-qqmb"><span class="ok-icon-tencentweibo-line icon-font"></span></a>
-                <a title="分享到twitter" class="share-teitter"><span class="ok-icon-twitter-line icon-font"></span></a>
-                <a title="分享到facebook" class="share-douban"><span class="ok-icon-facebook-line icon-font"></span></a>
-                <a title="分享到tumblr" class="share-douban"><span class="ok-icon-tumblr-line icon-font"></span></a>
-                <a title="更多平台" class="share-more"><span class="ok-icon-more icon-font"></span></a>
+        <div id="share_component"><!--其他分享组件-->
+            <h2>分享此图片墙</h2>
+            <div class="Share-module">
+                <div class="share-custom" style="text-align:center;">
+                    <a title="分享到新浪微博" class="share-weibo"><span class="ok-icon-sinaweibo-line icon-font"></span></a>
+                    <a title="分享到微信" class="share-weixin"><span class="ok-icon-wechat-line icon-font"></span></a>
+                    <a title="分享到QQ空间" class="share-qzone"><span class="ok-icon-qqzone-line icon-font"></span></a>  
+                    <a title="分享到豆瓣网" class="share-douban"><span class="ok-icon-douban-line icon-font"></span></a>
+                    <a title="分享到腾讯微博" class="share-qqwb"><span class="ok-icon-tencentweibo-line icon-font"></span></a>
+                    <a title="分享到印象笔记" class="share-evernote"><span class="ok-icon-evernote-line icon-font"></span></a>
+                    <a title="分享到email" class="share-email"><span class="ok-icon-email-line2 icon-font"></span></a>
+                    <a title="分享到google" class="share-google"><span class="ok-icon-evernote-line icon-font"></span></a>
+                    <a title="分享到twitter" class="share-twitter"><span class="ok-icon-twitter-line icon-font"></span></a>
+                    <a title="分享到facebook" class="share-facebook"><span class="ok-icon-facebook-line icon-font"></span></a>
+                    <a title="分享到tumblr" class="share-tumblr"><span class="ok-icon-tumblr-line icon-font"></span></a>
+                    
+                </div>
             </div>
         </div>
-    </div>
 
-      <div>
-        <div class="editor-info">
-          <div>
-            <p><a class="portrait" href="#"><img width="80" height="80" src="<?php echo SITE_URL; ?>/layout/images/avatar.jpeg"></a></p>
-            <p class="editor"><strong><?php echo $this->author->nickname; ?></strong></p>
-            <p class="per-sig">喜欢追求女神的吊丝，文学和摄影爱好者。创新设计实验室交互设计师。</p>
+            <div>
+                <div class="editor-info">
+                  <div>
+                    <p><a class="portrait" href="#"><img width="80" height="80" src="<?php echo SITE_URL; ?>/layout/images/avatar.jpeg"></a></p>
+                    <p class="editor"><strong><?php echo $this->author->nickname; ?></strong></p>
+                    <p class="per-sig">喜欢追求女神的吊丝，文学和摄影爱好者。创新设计实验室交互设计师。</p>
+                  </div>
+                </div>
+
+                <div class="other-share">
+                  <h2><?php if(isset($this->is_author) && $this->is_author): ?>我<?php else: ?>Ta<?php endif; ?>的其它分享</h2>
+                  <iframe src="" id="other_share" frameborder="0"></iframe>
+                </div>
+           </div>
+
+            <!-- 加载javascript文件 -->
+            <?php if(!empty($this->js) && count($this->js) > 0): ?>
+                <?php foreach($this->js as $js): ?>
+                <script type="text/javascript" src="<?php echo SITE_URL; ?>/scripts/<?php echo $js; ?>"></script>
+                <?php endforeach; ?>
+            <?php endif; ?>
+
+            <!-- 载入数据 -->
+            <script type="text/javascript">
+            <?php if(isset($this->items) && count($this->items) > 0): ?>
+            __items = <?php echo json_encode($this->items); ?>;
+            <?php endif; ?>
+
+            <?php if(isset($this->other_posts) && count($this->other_posts) > 0): ?>
+            __other_posts = <?php echo json_encode($this->other_posts); ?>;
+            <?php endif; ?>
+
+            var __post = new Post({id:<?php echo $this->post_id; ?>});
+            </script>
+
+          <?php endif; ?>
+
+          <div class="ok-ji">
+            <div class="logo">
+              <a href="#"></a>
+              <p>这个星球上最高效最有趣的便签工具</p>
+            </div>
           </div>
-        </div>
-
-        <div class="other-share">
-          <h2><?php if(isset($this->is_author) && $this->is_author): ?>我<?php else: ?>Ta<?php endif; ?>的其它分享</h2>
-          <iframe src="" id="other_share" frameborder="0"></iframe>
-        </div>
-      </div>
-
-        <!-- 加载javascript文件 -->
-        <?php if(!empty($this->js) && count($this->js) > 0): ?>
-            <?php foreach($this->js as $js): ?>
-            <script type="text/javascript" src="<?php echo SITE_URL; ?>/scripts/<?php echo $js; ?>"></script>
-            <?php endforeach; ?>
-        <?php endif; ?>
-
-        <!-- 载入数据 -->
-        <script type="text/javascript">
-        <?php if(isset($this->items) && count($this->items) > 0): ?>
-        __items = <?php echo json_encode($this->items); ?>;
-        <?php endif; ?>
-
-        <?php if(isset($this->other_posts) && count($this->other_posts) > 0): ?>
-        __other_posts = <?php echo json_encode($this->other_posts); ?>;
-        <?php endif; ?>
-
-        var __post = new Post({id:<?php echo $this->post_id; ?>});
-        </script>
-
-      <?php endif; ?>
-
-      <div class="ok-ji">
-        <div class="logo">
-          <a href="#"></a>
-          <p>这个星球上最高效最有趣的便签工具</p>
-        </div>
-      </div>
      
     </div>
   </div>

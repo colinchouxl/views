@@ -11,7 +11,7 @@
     <meta name="description" content="<?php echo get_description(process_sharetext($this->post->article)); ?>">
     <meta name="keywords" content="">
     <link rel="shortcut icon" href="<?php echo SITE_URL; ?>/favicon.ico"/>
-    <link rel="stylesheet" href="<?php echo SITE_URL; ?>/layout/note-share-icon-font.css" />
+    <link rel="stylesheet" href="<?php echo SITE_URL; ?>/fonts/ok-icon-fonts/icon-fonts.css" />
     <link rel="stylesheet" href="<?php echo SITE_URL; ?>/layout/note-sharing.css" />
 
     
@@ -81,12 +81,12 @@
             <div class="read-times"><span><?php echo $this->post->read_times; ?></span><span>阅读人次</span></div>
             <div class="share-op">
               <span>分享</span>
-              <a href="#" title="新浪微博" ><span class="ok-icon-share-sinaweibo-line icon-font"></span></a>
-              <a href="#" title="微信" ><span class="ok-icon-share-wechat-line icon-font"></span></a>
-              <a href="#" title="QQ空间" ><span class="ok-icon-share-qqzone-line icon-font"></span></a>
-              <a href="#" title="人人网" ><span class="ok-icon-share-twitter-line icon-font"></span></a>
-              <a href="#" title="腾讯微博" ><span class="ok-icon-share-tencentweibo-line icon-font"></span></a>
-              <a href="#" title="豆瓣网" ><span class="ok-icon-share-douban-line icon-font"></span></a>
+              <a href="#" title="新浪微博" ><span class="ok-icon-sinaweibo-line icon-font"></span></a>
+              <a href="#" title="微信" ><span class="ok-icon-wechat-line icon-font"></span></a>
+              <a href="#" title="QQ空间" ><span class="ok-icon-qqzone-line icon-font"></span></a>
+              <a href="#" title="人人网" ><span class="ok-icon-twitter-line icon-font"></span></a>
+              <a href="#" title="腾讯微博" ><span class="ok-icon-tencentweibo-line icon-font"></span></a>
+              <a href="#" title="豆瓣网" ><span class="ok-icon-douban-line icon-font"></span></a>
             </div>
         </div>
 
@@ -97,20 +97,24 @@
             <p><?php echo $this->post->article; ?></p>         
         </article>
       </div>
-      <div class="save-cont"><a href="#">存入OK笔记</a></div>
+      <!-- <div class="save-cont"><a href="#">存入OK笔记</a></div> -->
       <div class="line"><span></span></div>
 
       <div class="phone-hidden"><!--其他分享组件-->
         <h2>分享此页</h2>
         <div class="Share-module">
-          <div class="bshare-custom" style="text-align:center;">
-            <a title="分享到新浪微博" class="bshare-sinaminiblog"><span class="ok-icon-share-sinaweibo-line icon-font"></span></a>
-            <a title="分享到微信" class="bshare-weixin"><span class="ok-icon-share-wechat-line icon-font"></span></a>
-            <a title="分享到QQ空间" class="bshare-qzone"><span class="ok-icon-share-qqzone-line icon-font"></span></a>
-            <a title="分享到人人网" class="bshare-renren"><span class="ok-icon-share-twitter-line icon-font"></span></a>
-            <a title="分享到腾讯微博" class="bshare-qqmb"><span class="ok-icon-share-tencentweibo-line icon-font"></span></a>
-            <a title="分享到豆瓣网" class="bshare-douban"><span class="ok-icon-share-douban-line icon-font"></span></a>
-            <a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"><span class="ok-icon-share-more icon-font"></span></a>
+          <div class="share-custom" style="text-align:center;">
+              <a title="分享到新浪微博" class="share-weibo"><span class="ok-icon-sinaweibo-line icon-font"></span></a>
+              <a title="分享到微信" class="share-weixin"><span class="ok-icon-wechat-line icon-font"></span></a>
+              <a title="分享到QQ空间" class="share-qzone"><span class="ok-icon-qqzone-line icon-font"></span></a>  
+              <a title="分享到豆瓣网" class="share-douban"><span class="ok-icon-douban-line icon-font"></span></a>
+              <a title="分享到腾讯微博" class="share-qqmb"><span class="ok-icon-tencentweibo-line icon-font"></span></a>
+              <a title="分享到印象笔记" class="share-evernote"><span class="ok-icon-evernote-line icon-font"></span></a>
+              <a title="分享到腾讯微博" class="share-google"><span class="ok-icon-evernote-line icon-font"></span></a>
+              <a title="分享到email" class="share-email"><span class="ok-icon-email-line2 icon-font"></span></a>
+              <a title="分享到twitter" class="share-twitter"><span class="ok-icon-twitter-line icon-font"></span></a>
+              <a title="分享到facebook" class="share-facebook"><span class="ok-icon-facebook-line icon-font"></span></a>
+              <a title="分享到tumblr" class="share-tumblr"><span class="ok-icon-tumblr-line icon-font"></span></a>
           </div>
         </div>
       </div>
@@ -118,7 +122,7 @@
       <div>
         <div class="editor-info">
           <div>
-            <p><a class="portrait" href="#"></a></p>
+            <p><a class="portrait" href="#"><img width="80" height="80" src="<?php echo SITE_URL; ?>/layout/images/avatar.jpeg"></a></p>
             <p class="editor"><strong><?php echo $this->author->nickname; ?></strong></p>
             <p class="per-sig">喜欢追求女神的吊丝，文学和摄影爱好者。创新设计实验室交互设计师。</p>
           </div>
@@ -127,23 +131,9 @@
         <div class="other-share">
           <h2>TA的其它分享</h2>
           <div class="other-con">
-
-            <?php if(isset($this->other_posts) && count($this->other_posts) > 0): ?>
-            <?php foreach($this->other_posts as $other_post): ?><?php if(trim($other_post->article) != ""): ?><div class="item"><a href="<?php echo SITE_URL; ?>/note/share/<?php echo $other_post->hash; ?>" class="block">
-              <div class="cover"></div>
-              <div class="mask">
-                <div class="single-con">
-                  <div class="furnish"><span class="ok-icon-share-comma icon-font"></span></div>
-                  <div class="title"><h3><?php echo $other_post->get_title(); ?></h3></div>
-                  <div class="share-time"><span><?php echo $other_post->get_display_time(); ?></span></div>
-                </div>
-              </div>
-            </a>
-            <div class="content"><?php echo $other_post->article; ?></div>
-            </div><?php endif; ?><?php endforeach; ?>
-            <?php endif; ?>
-
-          </div>
+              <?php if(isset($this->other_posts) && count($this->other_posts) > 0): ?>
+              <?php foreach($this->other_posts as $other_post): ?><?php if(trim($other_post->article) != ""): ?>
+              <div class="item"><div class="mask"></div><a href="<?php echo SITE_URL; ?>/note/share/<?php echo $other_post->hash; ?>" class="block"><div class="cover"></div><div class="single-con"><div class="furnish"><span class="ok-icon-share-comma icon-font"></span></div><div class="title"><h3><?php echo $other_post->get_title(); ?></h3></div><div class="share-time">阅读次数：<span><?php echo $this->post->read_times; ?></span></div></div></a><div class="content"><?php echo $other_post->article; ?></div></div><?php endif; ?><?php endforeach; ?><?php endif; ?></div>
         </div>
       </div>
 
