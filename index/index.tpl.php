@@ -100,7 +100,7 @@
                             <div class="note editable expand0-600" contenteditable="true" spellcheck=false tabIndex="-1"></div>
                         </div>
                         <div class="bottom">
-                            <a href="#" class="submit" title="<?php echo $this->lang->SUBMIT; ?>"></a>
+                            <a href="#" class="submit" title="<?php echo $this->lang->SUBMIT; ?>">OK</a>
                             <span class="hint"><italic>Press <i>[Cmd/Ctrl+S]</i>&nbsp; to save or click --></italic></span>
                         </div>
                         <div class="checkbox"></div>
@@ -115,6 +115,7 @@
         <div id="note" class="app-section">
             <div id="notes_con">
                 <div class="inner-wrapper searching">
+
                     <div id="search_area">
                         <div class="fixed-shadow"><div class="left-shadow"></div><div class="middle-shadow"></div><div class="right-shadow"></div></div>
                         <div class="search-options">
@@ -192,7 +193,7 @@
                                 </span>
                                 <span class="num">(<?php echo $panel["num"]; ?>)</span>
                             </h2>
-                            <a href="#" class="img-wall-btn"><span class="ok-icon-imageWall icon-font"></span></a>
+                            <a href="#" class="img-wall-btn"><span class="ok-icon-imgwall2 icon-font"></span></a>
                         </div>
                         <div class="by-keywords result"></div>
                         <div class="archived result"></div>
@@ -260,13 +261,13 @@
                 <div class="share section">
                     <!-- 各大社交组件分享图标 -->
                     <div class="default">
-                        <div class="share-icon"><div><a href="#" class="qqmail component"><span class="ok-icon-email-line2 icon-font"></span></a></div></div><!-- 7-24 -->
+                        <div class="share-icon"><div><a href="#" class="qqmail component"><span class="ok-icon-email-line icon-font"></span></a></div></div><!-- 7-24 -->
                         <div class="share-icon"><div><a href="#" class="weibo component"><span class="ok-icon-sinaweibo-line icon-font"></span></a></div></div>
                         <div class="share-icon"><div><a href="#" class="douban component"><span class="ok-icon-douban-line icon-font"></span></a></div></div>
                         <div class="share-icon"><div><a href="#" class="qzone component"><span class="ok-icon-qqzone-line icon-font"></span></a></div></div>
                         <div class="share-icon"><div><a href="#" class="tqq component"><span class="ok-icon-tencentweibo-line icon-font"></span></a></div></div>
-                        <div class="share-icon"><div><a href="#" class="gmail component"><span class="ok-icon-wechat-line icon-font"></span></a></div></div>
-                        <div class="share-icon last"><div><a href="#" class="gmail component"><span class="ok-icon-wechat-line icon-font"></span></a></div></div>
+                        <div class="share-icon"><div><a href="#" class="google component"><span class="ok-icon-google icon-font"></span></a></div></div>
+                        <div class="share-icon last"><div><a href="#" class="facebook component"><span class="ok-icon-facebook-line icon-font"></span></a></div></div>
                     </div>
                 </div>
 
@@ -301,7 +302,7 @@
                     </div>
                 </div>
             </div>
-            <a href="#" id="backtotop"></a>
+            <a href="#" id="backtotop"><span class="ok-icon-edit-top icon-font"></span></a>
         </div><!-- note app ends -->
         <!-- =========================便签区域结束========================= -->
     </div><!-- 应用包含容器#app_wrapper结束 -->
@@ -447,7 +448,7 @@
                                 <div class="send-time">
                                     <p class="status">发送邮件时间
                                         <div class="get-info btn">
-                                            <span class="reduce ok-icon-reduce"></span><span class="clock" href="#">08:00</span><span class="add ok-icon-add"></span>
+                                            <span class="reduce ok-icon-reduce-line"></span><span class="clock" href="#">08:00</span><span class="add ok-icon-add-line"></span>
                                         </div>
                                     </p>
                                     <a href="#"><input type="range" value="7" name="points" min="0" max="23"  step="1"/></a>
@@ -491,7 +492,7 @@
                             <label>界面语言</label>
                             <div class=""></div>
                             <ul class="langs-con">
-                                <div class="current-state"><a href="#">简体中文</a><span class="ok-icon-down icon-font"></span></div>
+                                <div class="current-state"><a href="#">简体中文</a><span class=" ok-icon-option icon-font"></span></div>
                                 <li class="lang choosed"><a href="#" data-lang="zh_cn">简体中文</a></li>
                                 <li class="lang"><a href="#" data-lang="zh_tw">繁体中文</a></li>
                                 <li class="lang"><a href="#" data-lang="jp">日文</a></li>
@@ -502,7 +503,7 @@
                         <div class="fonts">
                             <label>自定义字体</label>
                             <ul class="fonts-con">
-                                <div class="current-state"><a href="#">微软雅黑</a><span class="ok-icon-down icon-font"></span></div>
+                                <div class="current-state"><a href="#">微软雅黑</a><span class=" ok-icon-option icon-font"></span></div>
                                 <li class="font choosed"><a href="#" data-font="">微软雅黑</a></li>
                                 <li class="font"><a href="#" data-font="">Nixie One</a></li>
                                 <li class="font"><a href="#" data-font="">Gill Sans</a></li>
@@ -512,7 +513,7 @@
                         <div class="font-size">
                             <label>字号大小</label>
                             <ul class="size-con">
-                                <div class="current-state"><a href="#">中</a><span class="ok-icon-down icon-font"></span></div>
+                                <div class="current-state"><a href="#">中</a><span class=" ok-icon-option icon-font"></span></div>
                                 <li class="size small choosed"><a href="#" data-size="">小</a></li>
                                 <li class="size medium"><a href="#" data-size="">中</a></li>
                                 <li class="size large"><a href="#" data-size="">大</a></li>
@@ -523,7 +524,7 @@
                             <label>主题选择</label>
                             <div>
                                 <ul class="theme-con">
-                                    <div class="current-state"><a href="#">伤心蓝</a><span class="ok-icon-down icon-font"></span></div>
+                                    <div class="current-state"><a href="#">伤心蓝</a><span class=" ok-icon-option icon-font"></span></div>
                                     <li class="theme" ><a href="#" data-id="0">神经病</a></li>
                                     <li class="theme" ><a href="#" data-id="1">优雅黑</a></li>
                                     <li class="theme choosed" ><a href="#" data-id="2">伤心蓝</a></li>
@@ -536,7 +537,7 @@
                         <div class="unfold">
                             <label>展开方式</label>
                             <ul class="unfold-con">
-                                <div class="current-state"><a href="#">挤出</a><span class="ok-icon-down icon-font"></span></div>
+                                <div class="current-state"><a href="#">挤出</a><span class=" ok-icon-option icon-font"></span></div>
                                 <li class="mode choosed"><a href="#" class="push">挤出</a></li>
                                 <li class="mode"><a href="#" class="overlay">覆盖</a></li>
                             </ul>
@@ -558,9 +559,9 @@
                     <div class="inner-con">
                       <p class="description">在虚线框中的六个社交分享将会出现在您的OK记分享中</p>
                       <div class="show-icon">
-                        <span class="item ok-icon-friends" data-id="1"></span><span class="item ok-icon-sinaweibo" data-id="2"></span><span class="item ok-icon-tencentweibo" data-id="3"></span><span class="item ok-icon-tumblr" data-id="4"></span><span class="item ok-icon-twitter" data-id="5"></span><span class="item ok-icon-wechat" data-id="6"></span>
+                        <span class="item ok-icon-friends-line" data-id="1"></span><span class="item ok-icon-sinaweibo-line" data-id="2"></span><span class="item ok-icon-tencentweibo-line" data-id="3"></span><span class="item ok-icon-tumblr-line" data-id="4"></span><span class="item ok-icon-twitter-line" data-id="5"></span><span class="item ok-icon-wechat-line" data-id="6"></span>
                       </div>
-                        <span class="item ok-icon-qqzone" data-id="7"></span><span class="item ok-icon-QQfriend" data-id="8"></span><span class="item ok-icon-douban" data-id="9"></span><span class="item ok-icon-email" data-id="10"></span><span class="item ok-icon-evernote" data-id="11"></span><span class="item ok-icon-facebook" data-id="12"></span>               
+                        <span class="item ok-icon-qqzone-line" data-id="7"></span><span class="item ok-icon-QQfriend-line" data-id="8"></span><span class="item ok-icon-douban-line" data-id="9"></span><span class="item ok-icon-email-line" data-id="10"></span><span class="item ok-icon-evernote-line" data-id="11"></span><span class="item ok-icon-facebook-line" data-id="12"></span><span class="item ok-icon-line" data-id="13"></span><span class="item ok-icon-google" data-id="14"></span>                 
                     </div>
                 </section><!-- 分享组件管理结束 -->
 
@@ -583,7 +584,7 @@
                             <label>图片墙筛选</label>
                             <p class="status">进入图片墙图片不小于
                                 <div class="get-info btn">
-                                    <span class="reduce ok-icon-reduce"></span><span class="size" href="#">200px</span><span class="add ok-icon-add"></span>
+                                    <span class="reduce ok-icon-reduce-line"></span><span class="size" href="#">200px</span><span class="add ok-icon-add-line"></span>
                                 </div>
                             </p>
                               <a href="#"><input type="range" id="image_size" name="points" value="<?php echo IMAGE_WALL_MIN_WIDTH; ?>" min="<?php echo IMAGE_WALL_MIN_WIDTH; ?>" max="<?php echo IMAGE_WALL_MAX_WIDTH; ?>" step="50"/></a>
