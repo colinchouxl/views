@@ -88,12 +88,12 @@
                 <div class="read-times"><span><?php echo $this->post->read_times; ?></span><span>阅读人次</span></div>
                 <div class="share-op">
                   <span>分享</span>
-                  <a href="#" title="新浪微博" ><span class="ok-icon-sinaweibo-line icon-font"></span></a>
-                  <a href="#" title="微信" ><span class="ok-icon-wechat-line icon-font"></span></a>
-                  <a href="#" title="QQ空间" ><span class="ok-icon-qqzone-line icon-font"></span></a>
-                  <a href="#" title="人人网" ><span class="ok-icon-twitter-line icon-font"></span></a>
-                  <a href="#" title="腾讯微博" ><span class="ok-icon-tencentweibo-line icon-font"></span></a>
-                  <a href="#" title="豆瓣网" ><span class="ok-icon-douban-line icon-font"></span></a>
+                  <a href="#" class="weibo" title="新浪微博"><span class="ok-icon-sinaweibo-line icon-font"></span></a>
+                  <a href="#" class="wechat" title="微信" ><span class="ok-icon-wechat-line icon-font"></span></a>
+                  <a href="#" class="qzone" title="QQ空间" ><span class="ok-icon-qqzone-line icon-font"></span></a>
+                  <a href="#" class="twitter" title="twitter" ><span class="ok-icon-twitter-line icon-font"></span></a>
+                  <a href="#" class="qqwb" title="腾讯微博" ><span class="ok-icon-tencentweibo-line icon-font"></span></a>
+                  <a href="#" class="douban" title="豆瓣网" ><span class="ok-icon-douban-line icon-font"></span></a>
                 </div>
             </div>
            
@@ -119,13 +119,15 @@
             <div class="Share-module">
                 <div class="share-custom" style="text-align:center;">
                     <a title="分享到新浪微博" class="share-weibo"><span class="ok-icon-sinaweibo-line icon-font"></span></a>
-                    <a title="分享到微信" class="share-weixin"><span class="ok-icon-wechat-line icon-font"></span></a>
-                    <a title="分享到QQ空间" class="share-qzone"><span class="ok-icon-qqzone-line icon-font"></span></a>  
+                    <a title="分享到微信" class="share-wechat"><span class="ok-icon-wechat-line icon-font"></span></a>
+                    <a title="分享到QQ空间" class="share-qzone"><span class="ok-icon-qqzone-line icon-font"></span></a>
+                    <a title="分享到QQ好友" class="share-qqim"><span class="ok-icon-QQfriend-line icon-font"></span></a>   
                     <a title="分享到豆瓣网" class="share-douban"><span class="ok-icon-douban-line icon-font"></span></a>
                     <a title="分享到腾讯微博" class="share-qqwb"><span class="ok-icon-tencentweibo-line icon-font"></span></a>
                     <a title="分享到印象笔记" class="share-evernote"><span class="ok-icon-evernote-line icon-font"></span></a>
-                    <a title="分享到email" class="share-email"><span class="ok-icon-email-line2 icon-font"></span></a>
-                    <a title="分享到google" class="share-google"><span class="ok-icon-evernote-line icon-font"></span></a>
+                    <a title="分享到email" class="share-qmail"><span class="ok-icon-email-line icon-font"></span></a>
+                    <a title="分享到google+" class="share-gplus"><span class="ok-icon-google icon-font"></span></a>
+                    <a title="分享到gmail" class="share-gmail"><span class=" ok-icon-gmail-line icon-font"></span></a>
                     <a title="分享到twitter" class="share-twitter"><span class="ok-icon-twitter-line icon-font"></span></a>
                     <a title="分享到facebook" class="share-facebook"><span class="ok-icon-facebook-line icon-font"></span></a>
                     <a title="分享到tumblr" class="share-tumblr"><span class="ok-icon-tumblr-line icon-font"></span></a>
